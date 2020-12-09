@@ -15,6 +15,7 @@ body {
    overflow-x: hidden;
 }
 
+/* Burger */
 .burger {
    position: fixed;
    top: 3%;
@@ -61,12 +62,13 @@ body {
    transform: rotate(-45deg) translate(-1px, -8px);
 }
 
+/* Main */
 main {
    display: flex;
    align-items: center;
-   justify-content: space-evenly;
+   justify-content: center;
    flex-direction: column;
-   height: 55vh;
+   height: 100vh;
    transition: all ease-in-out 0.5s;
    position: fixed;
    width: 100%;
@@ -77,16 +79,20 @@ main.show {
    transform: translateX(-20%);
 }
 
+/* Time */
 .time {
+   margin-bottom: 10vh;
    font-size: 2.5rem;
    color: #e85d75;
 }
 
+/* Form */
 form {
    display: flex;
    align-items: center;
    justify-content: center;
    min-width: 70%;
+   margin-bottom: 45vh;
    transition: all ease-in-out 0.5s;
 }
 
@@ -130,6 +136,7 @@ main.show form button .fa-plus {
    display: block;
 }
 
+/* Todo List */
 .todo-list {
    background-color: #e85d75;
    min-height: 100vh;
@@ -160,6 +167,7 @@ main.show form button .fa-plus {
    display: flex;
    align-items: center;
    justify-content: center;
+   transition: all ease-in-out 1s;
 }
 
 .todo h4 {
@@ -188,4 +196,86 @@ main.show form button .fa-plus {
 
 .todo-list.show {
    right: 0%;
+}
+
+/* Checked Todo */
+.checked {
+   opacity: 0.7;
+}
+
+/* Animation */
+@keyframes checked {
+   0% {
+      transform: translateX(0%);
+   }
+   50% {
+      transform: translateX(100%);
+   }
+   100% {
+      transform: translateX(0%);
+   }
+}
+
+@keyframes trash {
+   0% {
+      transform: rotate(0deg);
+   }
+   50% {
+      transform: rotate(10deg);
+   }
+   100% {
+      transform: rotate(0deg);
+   }
+}
+
+/* Alert */
+.alert {
+   width: 100%;
+   background-color: #e85d75;
+   text-align: center;
+   color: #fff;
+   padding: 0.5rem 1rem;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   position: absolute;
+   bottom: 0%;
+   transition: all ease-in-out 0.5s;
+   animation: showAlert 0.5s ease forwards;
+}
+
+@keyframes showAlert {
+   0% {
+      transform: translateY(100%);
+   }
+   100% {
+      transform: translateY(3%);
+   }
+}
+
+@media screen and (max-width: 880px) {
+   /* Time */
+   .time {
+      font-size: 2rem;
+   }
+   /* Main */
+   main.show {
+      transform: translateX(-25%);
+   }
+   /* Todo List */
+   .todo-list {
+      right: -50%;
+      width: 50%;
+   }
+}
+
+@media screen and (max-width: 680px) {
+   /* Time */
+   .time {
+      font-size: 1.5rem;
+   }
+   /* Todo List */
+   .todo-list {
+      right: -100%;
+      width: 100%;
+   }
 }
