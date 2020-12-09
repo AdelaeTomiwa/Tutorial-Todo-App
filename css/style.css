@@ -1,0 +1,191 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-size: 16px;
+   line-height: 1.7;
+   width: 100%;
+   min-height: 100vh;
+   background-color: #8bd1ff;
+   color: #333333;
+   overflow-x: hidden;
+}
+
+.burger {
+   position: fixed;
+   top: 3%;
+   right: 3%;
+   z-index: 3;
+   cursor: pointer;
+   transition: all ease-in-out 0.5s;
+}
+
+.burger div {
+   margin: 0.2rem;
+   height: 3px;
+   background-color: #ffffff;
+   transition: all ease-in-out 0.5s;
+}
+
+.line-1 {
+   width: 30px;
+}
+
+.line-2 {
+   width: 22px;
+}
+
+.line-3 {
+   width: 18px;
+}
+
+.burger.toggle {
+   transform: rotate(180deg);
+}
+
+.burger.toggle .line-1 {
+   width: 28px;
+   transform: rotate(45deg) translate(1px, 10px);
+}
+
+.burger.toggle .line-2 {
+   opacity: 0;
+}
+
+.burger.toggle .line-3 {
+   width: 28px;
+   transform: rotate(-45deg) translate(-1px, -8px);
+}
+
+main {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+   height: 55vh;
+   transition: all ease-in-out 0.5s;
+   position: fixed;
+   width: 100%;
+   overflow: hidden;
+}
+
+main.show {
+   transform: translateX(-20%);
+}
+
+.time {
+   font-size: 2.5rem;
+   color: #e85d75;
+}
+
+form {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 70%;
+   transition: all ease-in-out 0.5s;
+}
+
+form input {
+   width: 60%;
+   padding: 0.7rem 1rem;
+   border: none;
+   outline: none;
+   font-size: 1.2rem;
+}
+
+form button {
+   padding: 0.7rem 1rem;
+   border: none;
+   outline: none;
+   background-color: #e85d75;
+   font-size: 1.2rem;
+   color: #ffffff;
+   cursor: pointer;
+   transition: all ease-in-out 0.5s;
+   text-transform: uppercase;
+}
+
+form button .fa-plus {
+   display: none;
+   font-size: 1.4rem;
+}
+
+form button:hover {
+   background-color: #dd435d;
+}
+
+main.show form {
+   min-width: 40%;
+}
+main.show form button span {
+   display: none;
+}
+
+main.show form button .fa-plus {
+   display: block;
+}
+
+.todo-list {
+   background-color: #e85d75;
+   min-height: 100vh;
+   color: #ffffff;
+   position: absolute;
+   top: 0;
+   right: -40%;
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 1rem 2em;
+   transition: all ease-in-out 0.5s;
+}
+
+.todo-list h2 {
+   text-transform: uppercase;
+   font-size: 1.5rem;
+   margin: 1.2rem 0;
+}
+
+.todo {
+   background-color: #ffffff;
+   color: #333333;
+   margin: 0.5rem 0;
+   width: 100%;
+   padding: 0.3rem 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.todo h4 {
+   flex: 1;
+   margin: 0 1rem;
+}
+
+.todo i {
+   color: #8bd1ff;
+   cursor: pointer;
+   padding: 0.5rem;
+   transition: all ease-in-out 0.5s;
+}
+
+.todo i {
+   color: #54b9fc;
+}
+
+.todo .fa-trash {
+   color: #e85d75;
+}
+
+.todo .fa-trash:hover {
+   color: #dd435d;
+}
+
+.todo-list.show {
+   right: 0%;
+}
